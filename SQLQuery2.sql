@@ -11,7 +11,7 @@ create table materia(
 
 
 insert into materia values(1,'Matematicas',4);
-insert into materia values(2,'Ingles Técnico',3);
+insert into materia values(2,'Ingles TÃ©cnico',3);
 
 
 select * from materia;
@@ -26,7 +26,7 @@ horario_p datetime,
 constraint pk_cp primary key(clave_p) 
 );
 
-insert into profesor values(1,'José Perez','Calle 1',412122,'14:00');
+insert into profesor values(1,'JosÃ© Perez','Calle 1',412122,'14:00');
 insert into profesor values (2,'Maria Jose','Calle 1',412122,'9:00');
 
 select * from profesor;
@@ -107,11 +107,11 @@ constraint fk_p2 foreign key(clave_p2) references profesor(clave_p)
 
 
  --Tabla carrera
-insert into carrera values (3,'Diseño',3)
+insert into carrera values (3,'DiseÃ±o',3)
 
 --Tabla materia
 insert into materia values(3,'Dibujo',15)
-insert into materia values(4,'Programación',20)
+insert into materia values(4,'ProgramaciÃ³n',20)
 
 --Tabla alumno
 insert into alumno values(2,'Sergio',19,7,'Hombre',2)
@@ -164,6 +164,9 @@ constraint fk_cc1 foreign key (clave_clie1) references cliente (clave_clie))
 
 insert into producto values (1,'papas',7)
 insert into producto values (2,'refresco',9)
+insert into producto values (3,'refresco','')
+insert into producto values (4,'refresco',NULL)
+
 
 insert into cliente values (1,'ana')
 insert into cliente values (2,'sergio')
@@ -214,3 +217,20 @@ select * from producto
 truncate table producto
 
 --eliminar primero las relaciones y luego truncar las tablas en sistemas grandes se usa  mas truncate y delete
+
+
+/*
+para verificar si falta un valor en una columna, se puede usar IS NOT NULL
+*/
+
+SELECT nom_prod, precio from producto
+where precio IS  NULL
+
+
+/* la mejor manera de averiguar si una columna contiene un valor en blanco es buscar 
+una columna donde la longitud que se representa como LEN sea mayor a 0,
+como un valor en blanco es un campo sin nada puede excluir valores en blanco devolviendo
+filas solo donde la longitud del campo es mayor que 0.*/
+
+SELECT nom_prod, precio from producto
+where len(precio)>0
