@@ -16,3 +16,24 @@
 - Funciones de manejo de cadenas
 - Order by
 - Operadores logicos: nor, and, or
+- Operadores is, null, between
+- like, not like
+- Agregaciones: sum, count, max, min
+- Having
+- Distinct
+- Top
+- Join, inner join, left join, risht join
+- Alter table
+- Campos calculados
+- subconsultas,
+- subconsultas, in, not in
+- subconsultars con insert
+- comando go
+- vistas (view)
+- cifrado de vistas (encryption)
+- Eliminar vistas
+- Update, delete vistas+
+- check with option en vistas
+- Modificacion de vistas
+- Lenguaje de control de flujo case, IF
+- 
